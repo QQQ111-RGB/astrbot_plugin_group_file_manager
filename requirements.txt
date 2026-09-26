@@ -1,0 +1,3 @@
+# 蓝奏云转存（可选功能，仅当插件配置开启 lanzou_enabled 时需要）
+# zaxtyson/LanZouCloud-API，已对 2.6.10 版本接口核对
+lanzou-api>=2.6.10

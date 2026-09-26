@@ -1,0 +1,50 @@
+{
+  "quick_commands": {
+    "description": "启用快捷指令「搜索/下载」",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后群内可直接发送「搜索 <关键词>」「下载 <文件ID>」，无需 /file 前缀。若与其他插件的同名指令冲突，可在此关闭（/file search 与 /file download 不受影响）。"
+  },
+  "search_page_size": {
+    "description": "搜索结果每页条数",
+    "type": "int",
+    "default": 5,
+    "hint": "卡片式搜索结果每页展示的文件数。每条卡片占 3 行，建议不要设太大以免刷屏。"
+  },
+  "lanzou_enabled": {
+    "description": "启用蓝奏云链接提取",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后，「搜索/下载」会读取你自己蓝奏云网盘的文件清单，并给出永久分享链接（存储位置：蓝奏网盘）。本功能是只读的：插件不会上传/转存任何文件，文件由你自己上传到蓝奏云。需要先在 AstrBot 环境执行 pip install lanzou-api，并填写下方登录信息。"
+  },
+  "lanzou_cookie_ylogin": {
+    "description": "蓝奏云 Cookie：ylogin",
+    "type": "string",
+    "default": "",
+    "hint": "浏览器登录蓝奏云网页版后，从 Cookie 中复制 ylogin 的值。与 phpdisk_info 一起填写（这是唯一的登录方式）。"
+  },
+  "lanzou_cookie_phpdisk_info": {
+    "description": "蓝奏云 Cookie：phpdisk_info",
+    "type": "string",
+    "default": "",
+    "hint": "浏览器登录蓝奏云网页版后，从 Cookie 中复制 phpdisk_info 的值（含 % 编码可直接粘贴，会自动解码）。与 ylogin 一起填写。"
+  },
+  "lanzou_folder": {
+    "description": "蓝奏云文件目录名",
+    "type": "string",
+    "default": "",
+    "hint": "你自己上传文件到蓝奏云时存放的目录名。留空（推荐）= 直接读取蓝奏云根目录；填写目录名则只读取该目录（含子目录，取决于下方开关）。"
+  },
+  "lanzou_recursive": {
+    "description": "读取时包含子目录",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后，读取范围包含目录下的所有子目录（最深 3 层）；关闭则只读取第一层。"
+  },
+  "lanzou_cache_minutes": {
+    "description": "蓝奏云文件清单缓存分钟数",
+    "type": "int",
+    "default": 30,
+    "hint": "插件按该间隔重新读取蓝奏云文件清单。刚上传的文件等不及缓存过期时，可用 /file lzrefresh（管理员）或页面上的「刷新网盘清单」立即刷新；「下载」未命中时也会自动强制刷新一次再试。"
+  }
+}

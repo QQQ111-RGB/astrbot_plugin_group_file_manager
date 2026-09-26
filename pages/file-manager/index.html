@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>蓝奏云文件管理器</title>
+    <!-- 相对路径即可；AstrBot 会自动重写并追加短期 asset_token -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- 顶部统计 -->
+      <header class="hero">
+        <div class="hero-main">
+          <h1 id="page-title">蓝奏云文件管理器</h1>
+          <p class="hero-sub" id="hero-sub">正在连接 AstrBot…</p>
+        </div>
+        <div class="hero-actions">
+          <button class="btn" id="btn-refresh" type="button">刷新页面</button>
+        </div>
+      </header>
+
+      <section class="stats" id="stats" aria-label="网盘统计">
+        <div class="stat-card">
+          <span class="stat-label">网盘文件</span>
+          <strong class="stat-value" id="stat-files">–</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">匹配目录</span>
+          <strong class="stat-value" id="stat-folder">–</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">清单缓存</span>
+          <strong class="stat-value" id="stat-cache">–</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">状态</span>
+          <strong class="stat-value" id="stat-status">–</strong>
+        </div>
+      </section>
+
+      <!-- 工具条 -->
+      <section class="toolbar">
+        <div class="field grow">
+          <label class="field-label" for="input-keyword">搜索</label>
+          <input
+            id="input-keyword"
+            type="search"
+            placeholder="按文件名模糊搜索你的蓝奏云网盘文件…"
+            autocomplete="off"
+          />
+        </div>
+        <button class="btn" id="btn-search" type="button">查询</button>
+        <button class="btn btn-primary" id="btn-lzrefresh" type="button">
+          刷新网盘清单
+        </button>
+      </section>
+
+      <!-- 列表 -->
+      <section class="table-wrap">
+        <table class="file-table">
+          <thead>
+            <tr>
+              <th class="col-name">文件名</th>
+              <th class="col-size">大小</th>
+              <th class="col-time">上传时间</th>
+              <th class="col-status">状态</th>
+              <th class="col-ops">操作</th>
+            </tr>
+          </thead>
+          <tbody id="file-tbody">
+            <tr>
+              <td colspan="5" class="empty">正在加载…</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <p class="foot-note" id="foot-note"></p>
+    </div>
+
+    <!-- 文件链接对话框（永久分享链接） -->
+    <dialog id="dialog-link" class="dialog">
+      <form method="dialog" class="dialog-form">
+        <h2 id="link-title">文件链接</h2>
+        <p class="dialog-desc" id="link-desc">正在获取…</p>
+        <div class="link-list" id="link-list"></div>
+        <div class="dialog-actions">
+          <button class="btn btn-primary" value="cancel" type="submit">关闭</button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- 提示条 -->
+    <div class="toast-wrap" id="toast-wrap" aria-live="polite"></div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

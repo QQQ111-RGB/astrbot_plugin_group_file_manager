@@ -1,0 +1,27 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+build/
+dist/
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# ---- 临时文件 ----
+*.log
+*.tmp
+*.bak
+*.bak-*
+
+# 说明：_devtest/ 是开发自测目录，**保留在仓库里**（README 有引用，
+# 也方便别人验证）。如果不想发布它，取消下面这行的注释即可。
+# _devtest/

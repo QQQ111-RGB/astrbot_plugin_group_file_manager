@@ -1,0 +1,10 @@
+name: astrbot_plugin_group_file_manager # 插件唯一 ID，需与 WebUI 路由前缀保持一致
+display_name: 蓝奏云文件管理器
+short_desc: 只读提取你自己蓝奏云网盘的永久分享链接；「搜索 <关键词>」卡片式模糊搜索，「下载 <文件ID>」给链接（提取码/永久）。不索引群文件。
+desc: 不索引群文件、不识别群内上传、不下载、不转存。插件只做一件事：按只读方式读取你自己蓝奏云网盘指定目录的文件清单，群内直接发送「搜索 <关键词>」即可卡片式模糊搜索（数字文件ID、分页），发送「下载 <文件ID或文件名>」获取永久分享链接（含提取码）；另提供 /file 指令与专属 WebUI 管理页面（搜索、一键复制链接、刷新网盘清单）。
+author: your_name
+version: 3.0.0
+repo: https://github.com/QQQ111-RGB/astrbot_plugin_group_file_manager
+astrbot_version: ">=4.9.2"
+support_platforms:
+  - aiocqhttp
