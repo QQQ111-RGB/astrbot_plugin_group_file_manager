@@ -1,1 +1,1 @@
-# Q1
+# astrbot_plugin_group_file_manager
